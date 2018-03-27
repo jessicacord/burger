@@ -1,0 +1,11 @@
+body {
+    background-color: #7ce4e4;
+}
+
+.jumbotron {
+    text-align: center;
+}
+
+.not-devoured button {
+    margin: 0.6rem 0rem;
+}

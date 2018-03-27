@@ -1,0 +1,39 @@
+<div class="container">
+
+    <div class="jumbotron">
+        <h1>Eat-A-Burger</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-6 not-devoured">
+            <h4>Burgers To Eat</h4>
+            {{#each burgers}}
+                {{#unless devoured}}
+                    <form action="/api/burgers/{{id}}" method="POST">
+                        <button class="btn btn-warning btn-block" data-burger={{id}}>{{burger_name}}</button> 
+                    </form>
+                {{/unless}}
+            {{/each}}
+        </div>
+        <div class="col-md-6 devoured">
+            <h4>Devoured Burgers</h4>
+            {{#each burgers}}
+                {{#if devoured}}
+                    <button class="btn btn-default btn-block disabled" data-burger={{id}}>{{burger_name}}</button>
+                {{/if}}
+            {{/each}}
+        </div>
+    </div>
+
+    <form action="/api/burgers" method="POST" class="form-inline">
+        <div class="form-group">
+            <label for="add-burger">Add a burger</label>
+            <input type="text" class="form-control" id="add-burger" placeholder="" name="burger">
+
+            <button class="btn btn-primary btn-large" type="submit">Submit</button>
+        </div>
+
+        
+    </form>
+</div>
+
+
